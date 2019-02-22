@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mantente en contacto</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style>
+        #loading {
+            width: 42px;
+            display: none;
+        }
+        
+        .error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav nav-pills">
+        <li role="presentation">
+            <a href="index.html">Inicio</a>
+        </li>
+        <li role="presentation">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                Evento <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+
+                <li><a href="#">Fotos</a>
+                </li>
+                <li><a href="#">Salón</a>
+                </li>
+            </ul>
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#">Noticias</a>
+        </li>
+        <li role="presentation" class="active">
+            <a href="contacto.html">Contacto</a>
+        </li>
+    </ul>
+
+    <article class="container-fluid">
+        <section class="row">
+            <section class="col-md-6">
+                <form action="">
+                    <div class="form-group">
+                        <label for="correo">Correo</label>
+                        <input type="text" name="correo" id="correo" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea name="mensaje" id="mensaje" class="form-control"></textarea>
+                    </div>
+
+
+
+                    <button class="btn btn-success pull-right" id="enviar">
+                      <i class ="glypicon glypicon-send " ></i>
+                        Enviar</button>
+
+                    <img src="img/loading.gif" alt="loading" id="loading" class="pull-right">
+
+                    <p id="resultado"> </p>
+
+                </form>
+            </section>
+
+            <section class="col-md-6">
+
+            </section>
+        </section>
+    </article>
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script>
+        $(function() {
+            $("#enviar").on("click", function(evento) {
+                evento.preventDefault();
+
+                var $boton = $(this);
+                $boton.prop("disabled", true);
+
+                $("#loading").show();
+
+                var enviar = validar();
+
+                setTimeout(function() {
+                    if (enviar) {
+                        $("#resultado")
+                            .removeClass("text-danger")
+                            .addClass("text-success")
+                            .text("El correo se envio correctamente");
+                    } else {
+                        $("#resultado")
+                            .removeClass("text-seccess")
+                            .addClass("text-danger")
+                            .text("Completa todos los campos");
+                    }
+                    $boton.prop("disabled", false);
+                    $("#loading").hide();
+                }, 5000);
+
+
+            });
+        });
+
+        function validar() {
+            var $campos = $("form input, form textarea")
+            var valido = true;
+
+            $campos.each(function() {
+                var $campo = $(this);
+
+                if ($campo.val().length == 0) {
+                    $campo.addClass("error");
+                    valido = false;
+                } else {
+                    $campo.removeClass("error");
+                }
+            });
+            return valido;
+        }
+    </script>
+</body>
+
+</html>

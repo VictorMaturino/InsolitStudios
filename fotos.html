@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fotos</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <style>
+        .recuerdos {
+            width: 25rem;
+            display: inline-block;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barra" aria-expanded="false">
+                    <span class="sr-only">Cambiar</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Mi marca</a>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="barra">
+                <ul class="nav nav-pills navbar-nav navbar-left">
+                    <li role="presentation" class="active">
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                    Evento<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Fotos</a></li>
+                            <li><a href="#">Salón</a></li>
+                        </ul>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">Noticias</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation" id="login">
+                        <a href="#">Login</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">Registro</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="modal fade" role="dialog" id="ventana">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    <h4>Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Usuario">Usuario</label>
+                        <input type="text" name="usuario" id="usuario" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="Contraseña">Contraseña</label>
+                        <input type="password" name="password" id="password" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p id="advertencia"></p>
+                    <button class="btn btn-success" id="btnAceptar">Aceptar</button>
+                    <button class="btn btn-danger" id="btnCancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <article class="container-fluid">
+        <section class="row">
+            <section class="col-md-12">
+                <!--JUMBOTRON-->
+            </section>
+
+            <section class="col-md-12">
+                <a href="img/graduados1.jpg" data-lightbox="recuerdos" data-title="Compas">
+                    <img src="img/graduados1.jpg" alt="imagen 1" class="recuerdos">
+                </a>
+
+
+                <a href="img/graduados2.jpg" data-lightbox="recuerdos" data-title="imagen 2">
+                    <img src="img/graduados2.jpg" alt="imagen 1" class="recuerdos">
+                </a>
+
+                <a href="img/graduados2.jpg" data-lightbox="recuerdos" data-title="imagen 3">
+                    <img src="img/graduados3.jpg" alt="imagen 1" class="recuerdos">
+                </a>
+            </section>
+        </section>
+    </article>
+
+
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/lightbox.min.js"></script>
+
+    <script>
+        $(function() {
+            $("#ventana").modal({
+                show: false,
+                backdrop: "static"
+            });
+
+            $("#login").on("click", function() {
+                $("#ventana").modal("show");
+            });
+
+            $("#btnCancelar").on("click", function() {
+                $("#ventana").modal("hide");
+            });
+
+            $("#btnAceptar").on("click", function() {
+                var usuario = "victor";
+                var contrasena = "123";
+
+                var cajaUsuario = $("#usuario").val();
+                var cajaPassword = $("#password").val();
+
+                if (usuario == cajaUsuario && contrasena == cajaPassword) {
+                    $("#ventana").modal("hide");
+                    $("#login a").text("Bienvenido " + usuario);
+                    $("#login").off("click");
+                } else {
+                    $("#advertencia")
+                        .text("El usuario o contraseña no son correctos")
+                        .fadeIn()
+                        .delay(5000)
+                        .fadeOut();
+                }
+
+
+            });
+
+        });
+    </script>
+
+
+</body>
+
+</html>

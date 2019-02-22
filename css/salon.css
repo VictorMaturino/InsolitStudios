@@ -1,0 +1,61 @@
+.salon{
+    padding: 20px;
+    
+}
+.mesa{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: brown;
+    position: relative;
+}
+.silla{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgb(156,128,1);
+    display:block;
+    position: absolute;
+    
+}
+.silla1{
+    top: -22px;
+    right: 30px;
+}
+.silla2{
+    top: -6px;
+    right: -10px;
+}
+.silla3{
+    top: 22px;
+    right: -26px;
+}
+.silla4{
+    top: 52px;
+    right: -20px;
+}
+.silla5{
+    top: 74px;
+    right: 0px;
+}
+
+.silla6{
+    bottom: -22px;
+    right: 30px;
+}
+.silla7{
+    top: 74px;
+    left: 0px;
+}
+.silla8{
+    top: 52px;
+    left: -20px;
+}
+.silla9{
+    top: 22px;
+    left: -26px;
+}
+.silla10{
+    top: -6px;
+    left: -10px;
+}
