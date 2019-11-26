@@ -10,7 +10,6 @@
     }
 ?>
 <?php 
-session_start();
 include"conexion.php";
 
 $usuario = $_POST["usuario"];

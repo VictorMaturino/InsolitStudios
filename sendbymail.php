@@ -1,28 +1,26 @@
 <?php
+
+$para = $_POST['para'];
 if(isset($_POST['email'])) {
 
 // Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-$email_to = "edu.matusan.12@gmail.com";
+$email_to = $para;
 $email_subject = "Insolit Studios";
 
 // Aquí se deberían validar los datos ingresados por el usuario
-if(!isset($_POST['first_name']) ||
-!isset($_POST['last_name']) ||
-!isset($_POST['email']) ||
-!isset($_POST['telephone']) ||
-!isset($_POST['comments'])) {
+if(!isset($_POST['titulo']) ||
+!isset($_POST['titulo']) ||
+!isset($_POST['de']) ||
+!isset($_POST['mensaje'])) {
 
 echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
 echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
 die();
 }
 
-$email_message = "Detalles del formulario de contacto:\n\n";
-$email_message .= "Nombre: " . $_POST['first_name'] . "\n";
-$email_message .= "Apellido: " . $_POST['last_name'] . "\n";
-$email_message .= "E-mail: " . $_POST['email'] . "\n";
-$email_message .= "Teléfono: " . $_POST['telephone'] . "\n";
-$email_message .= "Comentarios: " . $_POST['comments'] . "\n\n";
+$email_message = "Notificaciones de Insolit Studios:\n\n";
+$email_message .= "Titulo: " . $_POST['titulo'] . "\n";
+$email_message .= "Mensaje: " . $_POST['mensaje'] . "\n";
 
 
 // Ahora se envía el e-mail usando la función mail() de PHP

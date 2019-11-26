@@ -20,7 +20,7 @@
 
         .uno {
             text-align: center;
-            font-size: 100px;
+            font-size: 900%;
             font-family: "monserrat";
             color: gray;
         }
@@ -28,7 +28,7 @@
         .dos {
             color: white;
             text-align: center;
-            font-size: 40px;
+            font-size: 350%;
             font-family: "monserrat";
         }
     </style>
@@ -64,8 +64,8 @@
 foreach($resultado AS $cont){
     echo "
     <p class='dos'>Dirección: $cont[direccion]</p>
-    <p class='dos'>$cont[email]</p>
-    <p class='dos'>Tel. $cont[telefono]</p>
+    <p class='dos'>$cont[email] &nbsp;&nbsp; <img src='img/mail.png' width='4%'></p>
+    <p class='dos'>Tel. $cont[telefono] &nbsp;&nbsp; <img src='img/phone.png' width='4%'></p>
     ";
     }
 

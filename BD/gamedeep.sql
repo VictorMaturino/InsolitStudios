@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2019 a las 19:09:40
+-- Tiempo de generación: 26-11-2019 a las 20:40:28
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -58,7 +58,8 @@ CREATE TABLE `emails` (
 --
 
 INSERT INTO `emails` (`id`, `email`) VALUES
-(1, 'vic.matusan.56@gmail.com');
+(1, 'vic.matusan.56@gmail.com'),
+(3, 'lalo@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -78,7 +79,7 @@ CREATE TABLE `publicacion` (
 --
 
 INSERT INTO `publicacion` (`id`, `titulo`, `descripcion`, `foto`) VALUES
-(1, 'Infinite Bit', 'Caer al vacío e intentar sobrevivir. Ni siquiera se trata de cuándo mueres, sino de cómo sobrevivir tanto como puedas y hacer todo lo que puedas', '5dd057619ab9b.png'),
+(1, 'Infinite Bit', 'Caer al vacío e intentar sobrevivir. Ni siquiera se trata de cuándo mueres, sino de cómo sobrevivir tanto como puedas y hacer todo lo que puedas', '5dd5e5d423575.png'),
 (2, 'Godinez Gone Wild', 'Godi acaba de terminar su trabajo haciendo el informe magenta después de largas horas en la oficina, pero finalmente lo hizo, ¡este largo fin de semana está listo para ser genial !, pero al salir notó que olvidó entregar el informe magenta (¡ho noooooo!) , Godi tiene que regresar y colocar el informe en la oficina de su jefe (luchando contra todos en su camino).', '5dd058f4043a1.png'),
 (3, 'BUBA CANYON VS ZOMBIES', 'Proximamente...', '5dd05a54c3cbc.png'),
 (4, 'Bunny Down', 'Proximamente...', '5dd05f51c87b7.png'),
@@ -148,13 +149,13 @@ ALTER TABLE `contacto`
 -- AUTO_INCREMENT de la tabla `emails`
 --
 ALTER TABLE `emails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario_admin`

@@ -8,30 +8,28 @@
      die() ;
 
     }
-?>
-<?
-session_start();
-include"conexion.php";
 
-$id=$_POST["id"];
-$foto = $_FILES["foto"];
+    include"conexion.php";
 
-$fotoNombre=$foto["name"];
-$fotoRuta=$foto["tmp_name"];
+    $id=$_POST["id"];
+    $foto = $_FILES["foto"];
 
-$extension = end((explode(".",$fotoNombre)));
-$nombreFinal = uniqid().".".$extension;
+    $fotoNombre=$foto["name"];
+    $fotoRuta=$foto["tmp_name"];
 
-move_uploaded_file($fotoRuta, "Fotos/".$nombreFinal);
+    $extension = end((explode(".",$fotoNombre)));
+    $nombreFinal = uniqid().".".$extension;
 
-$consulta="UPDATE publicacion SET foto='$nombreFinal' WHERE id='$id'";
+    move_uploaded_file($fotoRuta, "Fotos/".$nombreFinal);
 
-$resultado = $db->query($consulta);
-if($resultado){
-    header("Location: adminP.php");
+    $consulta="UPDATE publicacion SET foto='$nombreFinal' WHERE id='$id'";
 
-}
-else{
-    header("Location: adminP.php");
-}
+    $resultado = $db->query($consulta);
+    if($resultado){
+        header("Location: adminP.php");
+
+    }
+    else{
+        header("Location: adminP.php");
+    }
 ?>

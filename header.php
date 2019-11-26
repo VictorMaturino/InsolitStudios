@@ -91,10 +91,12 @@ SESSION_start();
             }
 
             .banner {
-                background-image: url('http://www.hd-freewallpapers.com/latest-wallpapers/abstract-website-backgrounds.jpg');
+                /* background-image: url('http://www.hd-freewallpapers.com/latest-wallpapers/abstract-website-backgrounds.jpg'); */
+                background-color: #0E0E0E;
                 text-align: center;
                 color: #fff;
-                width: 100%;
+                background-size: 100%;
+                height: 500px;
 
                 background-repeat: no-repeat;
                 background-attachment: scroll;
@@ -106,7 +108,7 @@ SESSION_start();
             }
 
             .banner-text {
-                padding: 200px 0 150px 0;
+                padding: 100px 0 150px 0;
             }
 
             .banner-heading {
@@ -207,7 +209,8 @@ SESSION_start();
             }
 
             .in {
-                color: #fed136;
+                color: red;
+                /* font-family: 'Lobster', cursive; */
             }
         </style>
     </head>
@@ -217,7 +220,7 @@ SESSION_start();
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="banner">
         <div class="container">
             <!-- Brand --><img src="img/logoInsolit.png" width="1.5%" height="2%">
-            <a class="navbar-brand" href="index.php"><span>&nbsp;Insolit</span> Studios</a>
+            <a class="navbar-brand" href="index.php"><span>&nbsp;&nbsp;Insolit</span> Studios</a>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -228,6 +231,9 @@ SESSION_start();
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav ml-auto">
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="publicaciones.php">Devlog</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="juegos.php">Nuestros Juegos</a>
                     </li>
@@ -250,9 +256,9 @@ SESSION_start();
                     Desarrollo y Aplicación de videojuegos
                 </div>
                 <div class="logotipo">
-                <img src="img/logoInsolit.png" width="7%" height="8%">
+                    <img src="img/logoInsolit.png" width="7%" height="8%">
                 </div>
-                <img src="img/flecha4.gif" height="200px">
+                    <!-- <img src="img/flecha4.gif" height="200px"> -->
             </div>
         </div>
     </div>

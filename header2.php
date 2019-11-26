@@ -207,8 +207,8 @@ SESSION_start();
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top" id="banner">
         <div class="container">
-            <!-- Brand -->
-            <a class="navbar-brand" href="adminP.php"><span>Insolit</span> Studios</a>
+            <!-- Brand --><img src="img/logoInsolit.png" width="1.5%" height="2%">
+            <a class="navbar-brand" href="adminP.php"><span>&nbsp;&nbsp;&nbsp;Insolit</span> Studios</a>
 
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
